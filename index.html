@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panadería Dulce Sabor - El sabor tradicional</title>
+    <style>
+        /* Estilos generales */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px 0;
+        }
+        
+        /* Encabezado */
+        header {
+            background-color: #f8e8d5;
+            padding: 20px 0;
+            text-align: center;
+            border-bottom: 3px solid #e0c9a6;
+        }
+        
+        .logo {
+            font-size: 2.5em;
+            color: #8b4513;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        
+        .slogan {
+            font-style: italic;
+            color: #a0522d;
+            font-size: 1.2em;
+        }
+        
+        /* Banner de oferta */
+        .oferta-container {
+            position: relative;
+            margin: 20px 0;
+        }
+        
+        .oferta-banner {
+            background-color: #e74c3c;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            font-size: 1.8em;
+            font-weight: bold;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            position: relative;
+            z-index: 2;
+            overflow: hidden;
+        }
+        
+        .oferta-banner::before {
+            content: "";
+            background: url(pan-icon) center/cover;
+            opacity: 0.15;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: -1;
+        }
+        
+        .oferta-text {
+            position: relative;
+            z-index: 3;
+            padding: 0 20px;
+        }
+        
+        .pan-icon {
+            display: inline-block;
+            margin: 0 15px;
+            vertical-align: middle;
+            font-size: 1.5em;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        /* Banner */
+        .banner {
+            width: 100%;
+            max-height: 500px;
+            object-fit: cover;
+            margin-bottom: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        
+        /* Navegación */
+        nav {
+            background-color: #a0522d;
+            padding: 15px 0;
+        }
+        
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+        
+        nav li {
+            margin: 0 20px;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1em;
+            transition: color 0.3s;
+        }
+        
+        nav a:hover {
+            color: #f8e8d5;
+        }
+        
+        /* Secciones */
+        section {
+            padding: 40px 0;
+            border-bottom: 1px solid #e0c9a6;
+        }
+        
+        h2 {
+            color: #8b4513;
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 2em;
+        }
+        
+        /* Historia */
+        .historia p {
+            text-align: center;
+            font-size: 1.1em;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        /* Quiénes somos */
+        .mision-vision {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+        
+        .card {
+            background-color: #f8e8d5;
+            padding: 20px;
+            border-radius: 8px;
+            width: 30%;
+            min-width: 250px;
+            margin: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        
+        .card h3 {
+            color: #a0522d;
+            border-bottom: 2px solid #e0c9a6;
+            padding-bottom: 10px;
+        }
+        
+        /* Productos */
+        .productos {
+            background-color: #f9f9f9;
+        }
+        
+        .productos ul {
+            list-style-type: none;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        .productos li {
+            background-color: white;
+            padding: 15px 25px;
+            margin: 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            font-weight: bold;
+            color: #8b4513;
+        }
+        
+        /* Contacto */
+        .contacto-info {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+        
+        .contacto-item {
+            margin: 10px;
+            min-width: 250px;
+        }
+        
+        .contacto-item h3 {
+            color: #a0522d;
+        }
+        
+        /* Pie de página */
+        footer {
+            background-color: #8b4513;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 40px;
+        }
+        
+        .social-icons {
+            margin-top: 15px;
+        }
+        
+        .social-icons a {
+            color: white;
+            margin: 0 10px;
+            font-size: 1.5em;
+        }
+    </style>
+</head>
+<body>
+    <!-- Encabezado -->
+    <header>
+        <div class="container">
+            <div class="logo">Panadería Dulce Sabor</div>
+            <div class="slogan">¡El sabor tradicional que conquista tu paladar!</div>
+        </div>
+    </header>
+    
+    <!-- Navegación -->
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#nosotros">Nosotros</a></li>
+                <li><a href="#productos">Productos</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <!-- Banner de oferta -->
+    <div class="container oferta-container">
+        <div class="oferta-banner">
+            <div class="oferta-text">
+                <span class="pan-icon">🥐</span>
+                ¡OFERTA ESPECIAL! LUNES 2x1 EN TODA NUESTRA PASTELERÍA
+                <span class="pan-icon">🍞</span>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Banner -->
+    <div class="container">
+        <img src="panes.jpg.jpeg" class="banner">
+    </div>
+    
+    <!-- Contenido principal -->
+    <main class="container">
+        <!-- Sección Historia -->
+        <section id="inicio" class="historia">
+            <h2>Historia del negocio</h2>
+            <p>"Dulce Sabor" es una panadería familiar con más de 10 años de experiencia en la elaboración de pan artesanal.</p>
+        </section>
+        
+        <!-- Sección Nosotros -->
+        <section id="nosotros">
+            <h2>Quiénes somos</h2>
+            <div class="mision-vision">
+                <div class="card">
+                    <h3>Misión</h3>
+                    <p>Ofrecer pan fresco y de calidad con ingredientes naturales.</p>
+                </div>
+                <div class="card">
+                    <h3>Visión</h3>
+                    <p>Ser la panadería de referencia en la comunidad con un toque tradicional.</p>
+                </div>
+                <div class="card">
+                    <h3>Valores</h3>
+                    <p>Compromiso, calidad y atención al cliente</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Sección Productos -->
+        <section id="productos" class="productos">
+            <h2>Catálogo de productos</h2>
+            <ul>
+                <li>Pan dulce y salado</li>
+                <li>Pasteles personalizados</li>
+                <li>Café y bebidas calientes</li>
+            </ul>
+        </section>
+        
+        <!-- Sección Contacto -->
+        <section id="contacto">
+            <h2>Contáctanos</h2>
+            <div class="contacto-info">
+                <div class="contacto-item">
+                    <h3>Ubicación</h3>
+                    <p>Calle Benito Juárez #123, Colonia Centro, Tapachula, C.P. 30700</p>
+                </div>
+                <div class="contacto-item">
+                    <h3>Teléfono</h3>
+                    <p>962-123-4567</p>
+                </div>
+                <div class="contacto-item">
+                    <h3>Horario</h3>
+                    <p>lunes a sábado, 7:00 AM - 8:00 PM</p>
+                </div>
+                <div class="contacto-item">
+                    <h3>Email</h3>
+                    <p>dulcesabor@gmail.com</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <!-- Pie de página -->
+    <footer>
+        <div class="container">
+            <p>© 2023 Panadería Dulce Sabor. Todos los derechos reservados.</p>
+            <div class="social-icons">
+                <span>Redes Sociales:</span>
+                <a href="#" aria-label="Facebook">✓ Facebook</a>
+                <a href="#" aria-label="Instagram">✓ Instagram</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
